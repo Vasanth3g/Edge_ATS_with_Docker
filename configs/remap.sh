@@ -1,6 +1,6 @@
 #!/bin/bash
 sed -i 's/CONFIG proxy.config.http.server_ports STRING *..*/CONFIG proxy.config.http.server_ports STRING '$LIVE_PORT' '$VOD_PORT'/g' /opt/trafficserver/etc/trafficserver/records.config
-HOST=$(ifconfig | grep -w inet | awk '{print$2}' | awk -F : 'NR==1{print$2}')
+#HOST=$(ifconfig | grep -w inet | awk '{print$2}' | awk -F : 'NR==1{print$2}')
 #HOST=`hostname`
 ###LIVE
 
