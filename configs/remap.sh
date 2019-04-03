@@ -1,5 +1,5 @@
 #!/bin/bash
-
+CONFIG=$(sed -e 's/CONFIG proxy.config.http.server_ports STRING *..*/CONFIG proxy.config.http.server_ports STRING $LIVE_PORT $VOD_PORT/g')
 HOST=`hostname`
 ###LIVE
 
