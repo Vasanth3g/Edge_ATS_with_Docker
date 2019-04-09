@@ -15,12 +15,12 @@ First need to build docker image for Container , Use below file to build command
 ```
 docker build docker build -t <tag name> -f DockerFile . 
 ```
-**Note : if Need to pull above build image directly  from docker hub [vasanth3g/apache_trafficserver](https://hub.docker.com/r/vasanth3g/apache_trafficserver)**
+Note : if Need to pull above build image directly  from docker hub [vasanth3g/apache_trafficserver](https://hub.docker.com/r/vasanth3g/apache_trafficserver)
 
 ```
 docker run -it -d --net -p <port:container:port for live> -p <port:container:port for live> -e HOST="" -e LIVE_PORT="" -e LIVE_ORIGIN="" -e VOD_PORT="" -e VOD_ORIGIN=""**
 ```
 
-**Note : Need to be create a file for Environment Variables like filename "env.list" . It contains all environment variables and pass the arguments using "--env-file " flag.**
+Note : Need to be create a file for Environment Variables like filename "env.list" . It contains all environment variables and pass the arguments using "--env-file " flag.
 
 For more about details visit on [Apache Trafficserver](https://docs.trafficserver.apache.org/).
