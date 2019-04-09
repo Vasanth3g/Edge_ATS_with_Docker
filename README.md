@@ -6,7 +6,7 @@ Apache Trafficserver(ATS) is a Highly Scalable , Proxy server and Cache based Se
 
 # Use case for this Image :
 
-Need to had some parameters before for run this container .First of all chosen environment variables for LIVE and VOD platform . So Declared as _LIVE_ and _VOD_ environment variables such as _PORTS , ORIGIN SERVERS_ etc .And the basic Configurations and tuning for high traffic handles and it did automatically while start the container will be configure itself .
+Need to had some parameters before for run this container .First of all chosen environment variables for _LIVE LINEAR and VOD platform . So Declared as _LIVE LINEAR_ and _VOD_ environment variables such as _PORTS , ORIGIN SERVERS_ etc .And the basic Configurations and tuning for high traffic handles and it did automatically while start the container will be configure itself .
 
 Need to create custom network such as bridge , overlay and macvlan .Most common use case bridge networking for hosted on single machine. For Overlay , if create as cluster based topology  for some cases  such as Docker swarm , Kubernetes so on .
 
