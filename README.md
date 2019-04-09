@@ -14,4 +14,4 @@ docker run -it -d --net -p <port:container:port for live> -p <port:container:por
 
 Note : Need to be create a file for Environment Variables like filename "env.list" . It contains all environment variables and pass the arguments using "--env-file " flag.
 
-@Vasanth
+For more about details visit on [Apache Trafficserver](https://docs.trafficserver.apache.org/).
