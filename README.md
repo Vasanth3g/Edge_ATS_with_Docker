@@ -13,7 +13,7 @@ Need to create custom network such as bridge , overlay and macvlan .Most common 
 First need to build docker image for Container , Use below file to build command like that
 
 ```
-docker build docker build -t <tag name> -f DockerFile . 
+docker build -t <tag name> -f DockerFile . 
 ```
 Note : if Need to pull above build image directly  from _docker hub_ [vasanth3g/apache_trafficserver](https://hub.docker.com/r/vasanth3g/apache_trafficserver)
 
