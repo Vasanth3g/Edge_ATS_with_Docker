@@ -9,6 +9,6 @@ Need to had some parameters before for run this container .First of all chosen e
 
 Need to create custom network such as bridge , overlay and macvlan .Most common use case bridge networking for hosted on single machine. For Overlay , if create cluster based topology some cases Docker swarm , Kubernetes so on .
 
-# docker run -it -d --net -p <port:container:port for live> -p <port:container:port for live> -e HOST="" -e LIVE_PORT="" -e LIVE_ORIGIN="" -e VOD_PORT="" -e VOD_ORIGIN=""
+**docker run -it -d --net -p <port:container:port for live> -p <port:container:port for live> -e HOST="" -e LIVE_PORT="" -e LIVE_ORIGIN="" -e VOD_PORT="" -e VOD_ORIGIN=""**
 
 Note : Need to be create a file for Environment Variables like filename "env.list" . It contains all environment variables and pass the arguments using "--env-file " flag.
