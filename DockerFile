@@ -1,0 +1,33 @@
+FROM centos:centos6.10
+MAINTAINER vasanth3g@gmail.com
+RUN yum install wget -y
+#COPY trafficserver-6.2.1-101.175ade6.el6.x86_64.rpm trafficserver-6.2.1-101.175ade6.el6.x86_64.rpm
+#RUN wget https://github.com/Vasanth3g/Edge_ATS_with_Docker/blob/master/trafficserver-6.2.1-90.f98a3a3.el7.centos.x86_64.rpm
+#RUN uname -r
+RUN yum install https://github.com/Vasanth3g/Edge_ATS_with_Docker/raw/master/trafficserver-6.2.1-101.175ade6.el6.x86_64.rpm -y  \
+    && wget https://raw.githubusercontent.com/Vasanth3g/Edge_ATS_with_Docker/master/configs/hdr_rw_live.config  \
+    && wget https://raw.githubusercontent.com/Vasanth3g/Edge_ATS_with_Docker/master/configs/records.config  \
+    && wget https://raw.githubusercontent.com/Vasanth3g/Edge_ATS_with_Docker/master/configs/storage.config  \
+    && wget https://raw.githubusercontent.com/Vasanth3g/Edge_ATS_with_Docker/master/configs/plugin.config  \
+    && wget https://raw.githubusercontent.com/Vasanth3g/Edge_ATS_with_Docker/master/configs/volume.config  \
+    && wget https://raw.githubusercontent.com/Vasanth3g/Edge_ATS_with_Docker/master/configs/header_vod.config  \
+    && cp -r hdr_rw_live.config records.config storage.config plugin.config volume.config header_vod.config /opt/trafficserver/etc/trafficserver/  \
+    && chmod -R 644 hdr_rw_live.config records.config storage.config plugin.config volume.config header_vod.config  \
+    && chown -R ats:ats hdr_rw_live.config records.config storage.config plugin.config volume.config header_vod.config \
+    && mkdir -p /tmp/ats/trafficserver \
+    && mkdir -p /mnt/ramdisk \
+    && chown -R ats:ats /mnt/ramdisk /tmp/ats/trafficserver \
+    && mkdir -p /opt/trafficserver/etc/trafficserver/dscp \
+    && echo "cond %{REMAP_PSEUDO_HOOK} \nset-conn-dscp 32 [L]" > /opt/trafficserver/etc/trafficserver/dscp/set_dscp_32.config \
+
+    && wget https://github.com/Vasanth3g/Edge_ATS_with_Docker/raw/master/configs/runtime_config.sh \
+    && chmod -R 777 runtime_config.sh 
+#ENV ORIGIN_HOST1 ${ORIGIN_HOST1}
+#ENV PORT1 ${PORT1}
+#ENV HOST ${HOST}
+#RUN  echo "map http://$HOST:$PORT1 http://$ORIGIN_HOST1" > /opt/trafficserver/etc/trafficserver/remap.config ;  
+VOLUME /root/cdn/vod:/tmp/ats/trafficserver
+VOLUME /root/cdn/live:/mnt/ramdisk
+EXPOSE 8006 8007
+CMD ["./runtime_config.sh"]
+#CMD ["/opt/trafficserver/bin/traffic_server"]
