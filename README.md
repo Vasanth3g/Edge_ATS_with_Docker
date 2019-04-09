@@ -1,5 +1,5 @@
 # Edge_ATS_with_Docker
-Apache Trafficserver in a Container
+Apache Trafficserver in a Docker Container
 
 # What is Traffic Server ?
 Apache Trafficserver(ATS) is a Highly Scalable , Proxy server and Cache based Servers .For large media distribution its performed well . its also used for CDN based Traffic Controller acts as end point Client Devices. The Docker image for most common use for micro-services in real world to create enlarge cluster to deploy scaling a large containers such as AWS EKS , Kubernetes , Rancher etc ..
