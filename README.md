@@ -23,7 +23,7 @@ docker run -it -d --net -p <port:container:port for live> -p <port:container:por
 
 Note : Need to be create a file for Environment Variables like filename _env.list_ . It contains all environment variables and pass the arguments using _--env-file_ flag.
 
-# Using Composer to set live(httpd) and vod(nginx) orgins with trafficserver :
+# Using docker compose to set live(httpd) and vod(nginx) orgins with trafficserver :
 
 ```
 docker-compose up -d 
