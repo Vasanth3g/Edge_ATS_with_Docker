@@ -6,7 +6,7 @@ Apache Trafficserver(ATS) is a Highly Scalable , Proxy server and Cache based Se
 
 # Use case for this Image :
 
-Need to had some parameters before for run this container .First of all chosen environment variables for _LIVE LINEAR and VOD platform . So Declared as _LIVE LINEAR_ and _VOD_ environment variables such as _PORTS , ORIGIN SERVERS_ etc .And the basic Configurations and tuning for high traffic handles and it did automatically while start the container will be configure itself .
+Need to had some parameters before to run this container .Choose environment variables for _LIVE LINEAR and VOD platform . So Declared as _LIVE LINEAR_ and _VOD_ environment variables such as _PORTS , ORIGIN SERVERS_ etc .And the basic Configurations and tuning for high traffic handles and it did automatically while start the container will be configure itself .
 
 Need to create custom network such as bridge , overlay and macvlan .Most common use case bridge networking for hosted on single machine. For Overlay , if create as cluster based topology  for some cases  such as Docker swarm , Kubernetes so on .
 
@@ -24,6 +24,8 @@ docker run -it -d --net -p <port:container:port for live> -p <port:container:por
 Note : Need to be create a file for Environment Variables like filename _env.list_ . It contains all environment variables and pass the arguments using _--env-file_ flag.
 
 # Using docker compose to set live(httpd) and vod(nginx) orgins with trafficserver :
+
+Specify the _Host IP_ and other parameters in compose file .
 
 ```
 docker-compose up -d 
