@@ -28,6 +28,6 @@ Note : Need to be create a file for Environment Variables like filename _env.lis
 ```
 docker-compose up -d 
 ```
-Note : Must installed _docker-compose binary_ for more details [composer install tutorial](https://docs.docker.com/compose/install/)
+Note : Must installed _docker-compose binary_ for more details [compose install tutorial](https://docs.docker.com/compose/install/)
 
 For more about details visit on [Apache Trafficserver](https://docs.trafficserver.apache.org/).
