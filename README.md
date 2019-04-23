@@ -30,7 +30,7 @@ docker-compose up -d
 ```
 Note : Must installed _docker-compose binary_ for more details [compose install tutorial](https://docs.docker.com/compose/install/)
 
-if any queries and support to the project contact __vasanth3g@gmail.com__
+if any queries and support to this project contact __vasanth3g@gmail.com__
 
 For more about details visit on [Apache Trafficserver](https://docs.trafficserver.apache.org/).
 
