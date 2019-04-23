@@ -1,0 +1,30 @@
+version: "2"
+services:
+      cdn:
+        image: vasanth3g/apache_trafficserver
+        ports:
+        - "8006:8006"
+        - "8007:8007"
+        environment:
+        - HOST=<current host IP>
+        - LIVE_PORT=8006
+        - VOD_PORT=8007
+        - LIVE_ORIGIN=httpd
+        - VOD_ORIGIN=nginx
+        hostname: trafficserver
+        networks:
+                - mynetwork
+      httpd:
+          image: httpd
+          hostname: httpd
+          networks:
+                - mynetwork
+      nginx:
+          image: nginx
+          hostname: nginx
+          networks:
+                - mynetwork
+
+networks:
+    mynetwork:
+         driver: bridge
