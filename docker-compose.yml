@@ -6,7 +6,7 @@ services:
         - "8006:8006"
         - "8007:8007"
         environment:
-        - HOST=$IP
+        - HOST=DEMONIP
         - LIVE_PORT=8006
         - VOD_PORT=8007
         - LIVE_ORIGIN=httpd
